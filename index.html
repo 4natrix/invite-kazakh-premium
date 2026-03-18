@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover" />
+  <title>Айбек & Айгерим | National Premium Wedding</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Marck+Script&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    :root {
+      --navy: #082c3c;
+      --navy-soft: #0d3c52;
+      --gold: #d4b161;
+      --gold-dark: #b78b38;
+      --cream: #f6efdf;
+      --text: #153645;
+      --muted: #60717b;
+      --light-bg: #f5efe3;
+      --card: rgba(255,255,255,0.88);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top, rgba(212, 177, 97, 0.12), transparent 30%),
+        linear-gradient(180deg, #f8f5ef 0%, #f1eadb 100%);
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 30px 0;
+      background:
+        linear-gradient(rgba(7, 39, 56, 0.72), rgba(7, 39, 56, 0.78)),
+        url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      overflow: hidden;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      opacity: 0.16;
+      background-repeat: no-repeat;
+      background-size: contain;
+      pointer-events: none;
+    }
+
+    .hero::before {
+      top: 25px;
+      left: 25px;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path fill='%23d4b161' d='M50 6c8 10 15 13 25 13-6 5-9 10-9 17 0 7 3 12 9 17-10 0-17 4-25 13-8-9-15-13-25-13 6-5 9-10 9-17 0-7-3-12-9-17 10 0 17-3 25-13zm0 20c-6 6-11 9-18 10 5 4 7 8 7 14s-2 10-7 14c7 1 12 4 18 10 6-6 11-9 18-10-5-4-7-8-7-14s2-10 7-14c-7-1-12-4-18-10z'/></svg>");
+    }
+
+    .hero::after {
+      right: 25px;
+      bottom: 25px;
+      transform: rotate(180deg);
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path fill='%23d4b161' d='M50 6c8 10 15 13 25 13-6 5-9 10-9 17 0 7 3 12 9 17-10 0-17 4-25 13-8-9-15-13-25-13 6-5 9-10 9-17 0-7-3-12-9-17 10 0 17-3 25-13zm0 20c-6 6-11 9-18 10 5 4 7 8 7 14s-2 10-7 14c7 1 12 4 18 10 6-6 11-9 18-10-5-4-7-8-7-14s2-10 7-14c-7-1-12-4-18-10z'/></svg>");
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: min(980px, calc(100% - 32px));
+      background: rgba(8, 44, 60, 0.42);
+      border: 1px solid rgba(212, 177, 97, 0.28);
+      border-radius: 36px;
+      padding: 48px 24px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 22px 70px rgba(0, 0, 0, 0.22);
+      color: white;
+      animation: fadeUp 1s ease;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-pre {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.36em;
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+
+    .hero-names {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 5.6rem;
+      line-height: 1;
+      font-weight: 700;
+      color: #fff7e8;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    .hero-script {
+      font-family: 'Marck Script', cursive;
+      font-size: 2.6rem;
+      color: #f0d999;
+      margin-bottom: 16px;
+    }
+
+    .hero-date {
+      font-size: 1rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.92);
+      margin-bottom: 22px;
+    }
+
+    .hero-text {
+      max-width: 690px;
+      margin: 0 auto 30px;
+      line-height: 1.85;
+      color: rgba(255,255,255,0.9);
+      font-size: 0.98rem;
+    }
+
+    .timer-box {
+      width: 100%;
+      max-width: 760px;
+      margin: 0 auto 18px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .timer-item {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(212, 177, 97, 0.20);
+      border-radius: 20px;
+      padding: 18px 10px;
+    }
+
+    .timer-number {
+      font-size: 2.5rem;
+      font-weight: 600;
+      line-height: 1;
+      margin-bottom: 8px;
+      color: #fff7e8;
+    }
+
+    .timer-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: #dbcaa1;
+    }
+
+    .hero-location {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 24px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(212, 177, 97, 0.22);
+      font-size: 0.92rem;
+      color: #fff3d5;
+    }
+
+    .section {
+      padding: 96px 0;
+    }
+
+    .section-head {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-pre {
+      color: var(--gold-dark);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.35rem;
+      color: var(--text);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .section-text {
+      max-width: 700px;
+      margin: 0 auto;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .gallery-item {
+      min-height: 300px;
+      border-radius: 28px;
+      overflow: hidden;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 14px 34px rgba(21, 54, 69, 0.08);
+      border: 1px solid rgba(179, 138, 51, 0.10);
+    }
+
+    .gallery-item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(8, 44, 60, 0.56), rgba(8, 44, 60, 0.08));
+    }
+
+    .gallery-item span {
+      position: absolute;
+      left: 18px;
+      bottom: 18px;
+      z-index: 1;
+      color: #fff5da;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.95rem;
+      font-weight: 700;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 18px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 20px;
+      background: var(--card);
+      border: 1px solid rgba(179, 138, 51, 0.16);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: 0 14px 34px rgba(21, 54, 69, 0.06);
+    }
+
+    .timeline-time {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      color: var(--gold-dark);
+      font-weight: 700;
+    }
+
+    .timeline-item h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.1rem;
+      color: var(--text);
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .timeline-item p {
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .soft-card {
+      background: var(--card);
+      border: 1px solid rgba(179, 138, 51, 0.16);
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: 0 14px 34px rgba(21, 54, 69, 0.06);
+    }
+
+    .soft-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.3rem;
+      color: var(--text);
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .soft-card p {
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .palette {
+      display: flex;
+      gap: 12px;
+      margin-top: 18px;
+      flex-wrap: wrap;
+    }
+
+    .palette span {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: 1px solid rgba(179, 138, 51, 0.18);
+      display: inline-block;
+    }
+
+    .calendar-big {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 5.6rem;
+      color: var(--gold-dark);
+      line-height: 1;
+      font-weight: 700;
+    }
+
+    .calendar-month {
+      text-transform: uppercase;
+      letter-spacing: 0.26em;
+      color: #6d7f87;
+      font-size: 0.9rem;
+      margin-bottom: 18px;
+    }
+
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 8px;
+      margin-top: 16px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .calendar-grid div {
+      padding: 8px 0;
+      border-radius: 12px;
+      background: #fbf8f1;
+    }
+
+    .calendar-grid .mark {
+      background: linear-gradient(135deg, #d4b161, #b78b38);
+      color: #0b3549;
+      font-weight: 700;
+    }
+
+    .venue-card {
+      text-align: center;
+      margin-bottom: 22px;
+    }
+
+    .venue-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.45rem;
+      color: var(--text);
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .venue-card p {
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .map-wrap {
+      overflow: hidden;
+      border-radius: 28px;
+      border: 1px solid rgba(179, 138, 51, 0.16);
+      box-shadow: 0 14px 34px rgba(21, 54, 69, 0.06);
+    }
+
+    .map-wrap iframe {
+      width: 100%;
+      height: 380px;
+      border: 0;
+      display: block;
+      filter: saturate(0.9);
+    }
+
+    .map-buttons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .map-btn,
+    .submit-btn,
+    .wa-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border-radius: 999px;
+      padding: 14px 22px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      transition: .2s ease;
+    }
+
+    .map-btn {
+      background: white;
+      border: 1px solid rgba(179, 138, 51, 0.22);
+      color: var(--text);
+    }
+
+    .submit-btn,
+    .wa-btn {
+      background: linear-gradient(135deg, #d4b161, #b78b38);
+      color: #0b3549;
+      font-weight: 700;
+      box-shadow: 0 12px 24px rgba(180, 139, 57, 0.20);
+    }
+
+    .map-btn:hover,
+    .submit-btn:hover,
+    .wa-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .form-wrap {
+      background: var(--card);
+      border: 1px solid rgba(179, 138, 51, 0.16);
+      border-radius: 28px;
+      padding: 34px;
+      box-shadow: 0 14px 34px rgba(21, 54, 69, 0.06);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      color: var(--gold-dark);
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid rgba(179, 138, 51, 0.18);
+      background: white;
+      color: var(--text);
+      border-radius: 16px;
+      padding: 14px 16px;
+      font: inherit;
+      outline: none;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--gold-dark);
+    }
+
+    .submit-btn {
+      width: 100%;
+      margin-top: 6px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .contact-card {
+      background: var(--card);
+      border: 1px solid rgba(179, 138, 51, 0.16);
+      border-radius: 28px;
+      padding: 28px;
+      text-align: center;
+      box-shadow: 0 14px 34px rgba(21, 54, 69, 0.06);
+    }
+
+    .contact-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.3rem;
+      color: var(--text);
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .contact-role {
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--gold-dark);
+      font-size: 0.75rem;
+      margin-bottom: 14px;
+    }
+
+    .contact-phone {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    footer {
+      padding: 38px 0 90px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+      background: var(--light-bg);
+    }
+
+    .footer-names {
+      font-family: 'Marck Script', cursive;
+      font-size: 2.2rem;
+      color: var(--gold-dark);
+      margin-bottom: 10px;
+    }
+
+    .music-player {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 60;
+    }
+
+    .music-btn {
+      background: linear-gradient(135deg, #d4b161, #b78b38);
+      color: #0b3549;
+      border: none;
+      border-radius: 999px;
+      padding: 14px 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      box-shadow: 0 12px 24px rgba(180, 139, 57, 0.26);
+    }
+
+    @media (max-width: 980px) {
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .two-col,
+      .contact-grid { grid-template-columns: 1fr; }
+      .hero-names { font-size: 4.4rem; }
+    }
+
+    @media (max-width: 760px) {
+      .section { padding: 76px 0; }
+      .hero-names { font-size: 3.3rem; }
+      .hero-script { font-size: 2.1rem; }
+      .timer-box { grid-template-columns: repeat(2, 1fr); }
+      .timeline-item { grid-template-columns: 1fr; }
+      .form-grid { grid-template-columns: 1fr; }
+      .section-title { font-size: 2.7rem; }
+      .map-wrap iframe { height: 300px; }
+    }
+
+    @media (max-width: 520px) {
+      html { font-size: 14px; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .hero-inner { padding: 34px 18px; border-radius: 26px; }
+      .hero-names { font-size: 2.8rem; }
+      .hero-location {
+        width: 100%;
+        justify-content: center;
+      }
+      .music-player { left: 16px; right: 16px; }
+      .music-btn { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-pre">Ұлттық нақыштағы үйлену тойы</div>
+      <h1 class="hero-names">Айбек & Айгерим</h1>
+      <div class="hero-script">Дәстүр мен махаббат тоғысқан кеш</div>
+      <div class="hero-date">26 маусым 2026</div>
+
+      <p class="hero-text">
+        Сіздерді ұлттық дәстүр мен шынайы қуанышқа толы салтанатты тойымыздың қадірлі қонағы болуға шақырамыз.
+        Бұл күн жүрегімізде мәңгі сақталады, ал сіздердің қатысуларыңыз оны одан да ерекше етеді.
+      </p>
+
+      <div class="timer-box">
+        <div class="timer-item">
+          <div class="timer-number" id="days">00</div>
+          <div class="timer-label">Күн</div>
+        </div>
+        <div class="timer-item">
+          <div class="timer-number" id="hours">00</div>
+          <div class="timer-label">Сағат</div>
+        </div>
+        <div class="timer-item">
+          <div class="timer-number" id="minutes">00</div>
+          <div class="timer-label">Минут</div>
+        </div>
+        <div class="timer-item">
+          <div class="timer-number" id="seconds">00</div>
+          <div class="timer-label">Секунд</div>
+        </div>
+      </div>
+
+      <div class="hero-location">
+        <i class="fas fa-location-dot"></i>
+        Астана • «Дәстүрлік» мейрамханасы • 18:00
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-pre">Естелік сәттер</div>
+        <h2 class="section-title">Біздің әдемі сәттеріміз</h2>
+        <p class="section-text">
+          Махаббатқа, жылулыққа және естен кетпес әсерге толы көркем кештің атмосферасы.
+        </p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item" style="background-image:url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=80')">
+          <span>Махаббат</span>
+        </div>
+        <div class="gallery-item" style="background-image:url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80')">
+          <span>Дәстүр</span>
+        </div>
+        <div class="gallery-item" style="background-image:url('https://images.unsplash.com/photo-1522673607200-164d1b3ce470?auto=format&fit=crop&w=900&q=80')">
+          <span>Қуаныш</span>
+        </div>
+        <div class="gallery-item" style="background-image:url('https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&w=900&q=80')">
+          <span>Бақыт</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-pre">Той бағдарламасы</div>
+        <h2 class="section-title">Кештің реті</h2>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-time">18:00</div>
+          <div>
+            <h3>Қонақтарды қарсы алу</h3>
+            <p>Құрметті қонақтарды күтіп алу, естелік суреттер және жылы жүздесулер.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-time">19:00</div>
+          <div>
+            <h3>Тойдың ашылуы</h3>
+            <p>Таныстыру, құттықтаулар, салтанатты басталу және ерекше атмосфера.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-time">20:00</div>
+          <div>
+            <h3>Салт-дәстүр мен думан</h3>
+            <p>Ұлттық нақыштағы жүргізілу, ән-күй, көтеріңкі көңіл-күй және қызықты бағдарлама.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-time">22:30</div>
+          <div>
+            <h3>Алғашқы би</h3>
+            <p>Екі жүректің біріккенін бейнелейтін ерекше әрі әсерлі сәт.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container two-col">
+      <div class="soft-card">
+        <div class="section-pre">Киім үлгісі</div>
+        <h3>Dress code</h3>
+        <p>
+          Ұлттық нақышты, классикалық әрі салтанатты стильді қолдасаңыздар, біз үшін үлкен қуаныш болады.
+        </p>
+
+        <div class="palette">
+          <span style="background:#082c3c;"></span>
+          <span style="background:#0d6d79;"></span>
+          <span style="background:#d4b161;"></span>
+          <span style="background:#f6efdf;"></span>
+        </div>
+      </div>
+
+      <div class="soft-card" style="text-align:center;">
+        <div class="section-pre">Күнтізбе</div>
+        <div class="calendar-big">26</div>
+        <div class="calendar-month">June 2026</div>
+
+        <div class="calendar-grid">
+          <div>Пн</div><div>Вт</div><div>Ср</div><div>Чт</div><div>Пт</div><div>Сб</div><div>Вс</div>
+          <div></div><div></div><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div>
+          <div>6</div><div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div>12</div>
+          <div>13</div><div>14</div><div>15</div><div>16</div><div>17</div><div>18</div><div>19</div>
+          <div>20</div><div>21</div><div>22</div><div>23</div><div>24</div><div>25</div><div class="mark">26</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-pre">Өтетін орны</div>
+        <h2 class="section-title">Той мекені</h2>
+      </div>
+
+      <div class="soft-card venue-card">
+        <h3>«Дәстүрлік» мейрамханасы</h3>
+        <p>Астана қ., Тәуелсіздік даңғылы, 15<br>Қонақтарды қарсы алу — 18:00</p>
+      </div>
+
+      <div class="map-wrap">
+        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A8b8c8d8e8f8a8b8c8d8e8f8a8b8c8d8e8f8a8b&source=constructor" loading="lazy"></iframe>
+      </div>
+
+      <div class="map-buttons">
+        <a class="map-btn" target="_blank" href="https://yandex.kz/maps/163/astana/?ll=71.430%2C51.160&z=17">
+          <i class="fas fa-map"></i> Яндекс
+        </a>
+        <a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Тауелсиздик+15+Астана">
+          <i class="fab fa-google"></i> Google
+        </a>
+        <a class="map-btn" target="_blank" href="https://2gis.kz/astana/geo/123456789">
+          <i class="fas fa-location-arrow"></i> 2GIS
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-pre">Қатысуды растау</div>
+        <h2 class="section-title">RSVP формасы</h2>
+        <p class="section-text">Тойға келетіндігіңізді растау үшін төмендегі форманы толтырыңыз.</p>
+      </div>
+
+      <div class="form-wrap">
+        <form id="rsvpForm">
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Аты-жөніңіз</label>
+              <input type="text" id="guestName" placeholder="Иванов Иван" required>
+            </div>
+
+            <div class="form-group">
+              <label>Телефон нөмірі</label>
+              <input type="tel" id="guestPhone" placeholder="+7 (777) 123-45-67" required>
+            </div>
+
+            <div class="form-group full">
+              <label>Қонақ саны</label>
+              <select id="guestCount" required>
+                <option value="">Таңдаңыз</option>
+                <option value="1">Жалғыз барамын</option>
+                <option value="2">Екеуміз барамыз</option>
+                <option value="3">Үшеуміз барамыз</option>
+                <option value="4">Төрт және одан көп</option>
+              </select>
+            </div>
+
+            <div class="form-group full">
+              <label>Тілектеріңіз</label>
+              <textarea id="guestMessage" placeholder="Тілегіңізді жазыңыз..."></textarea>
+            </div>
+
+            <div class="form-group full">
+              <button class="submit-btn" type="submit">
+                <i class="fas fa-paper-plane"></i>
+                Жіберу
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <div id="formResponse" style="margin-top:18px; text-align:center; color:#5f7078;"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-pre">Байланыс</div>
+        <h2 class="section-title">Бізбен хабарласыңыз</h2>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Айбек</h3>
+          <div class="contact-role">Жігіт</div>
+          <div class="contact-phone">+7 (777) 111-22-33</div>
+          <a class="wa-btn" target="_blank" href="https://wa.me/77771112233?text=Сәлеметсіз бе! 26.06.2026 өтетін тойға қатысатынымды растаймын.">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </a>
+        </div>
+
+        <div class="contact-card">
+          <h3>Айгерим</h3>
+          <div class="contact-role">Қыз</div>
+          <div class="contact-phone">+7 (777) 444-55-66</div>
+          <a class="wa-btn" target="_blank" href="https://wa.me/77774445566?text=Сәлеметсіз бе! 26.06.2026 өтетін тойға қатысатынымды растаймын.">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-names">Айбек & Айгерим</div>
+    <div>26 маусым 2026 • Сіздерді қуанышпен күтеміз</div>
+  </footer>
+
+  <div class="music-player">
+    <button class="music-btn" id="musicToggle">
+      <i class="fas fa-music"></i>
+      <span>Музыка</span>
+    </button>
+    <audio id="bgMusic" loop preload="auto">
+      <source src="https://assets.mixkit.co/music/493/493.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <script>
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxRHAriRCa0dyAnVWkXN5eVt75IDmggcgzCKM5p2p-m6ZVteaVfhD1qhMatnL62da2x/exec';
+    const weddingDate = new Date('2026-06-26T18:00:00').getTime();
+
+    function updateTimer() {
+      const now = new Date().getTime();
+      const distance = weddingDate - now;
+
+      if (distance <= 0) {
+        ['days', 'hours', 'minutes', 'seconds'].forEach(id => {
+          document.getElementById(id).textContent = '00';
+        });
+        return;
+      }
+
+      document.getElementById('days').textContent =
+        String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2, '0');
+      document.getElementById('hours').textContent =
+        String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+      document.getElementById('minutes').textContent =
+        String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+      document.getElementById('seconds').textContent =
+        String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, '0');
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+
+    const music = document.getElementById('bgMusic');
+    const toggleBtn = document.getElementById('musicToggle');
+    let isPlaying = false;
+
+    toggleBtn.addEventListener('click', function () {
+      if (isPlaying) {
+        music.pause();
+        toggleBtn.innerHTML = '<i class="fas fa-music"></i><span>Музыка</span>';
+      } else {
+        music.play();
+        toggleBtn.innerHTML = '<i class="fas fa-pause"></i><span>Пауза</span>';
+      }
+      isPlaying = !isPlaying;
+    });
+
+    document.getElementById('rsvpForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const submitBtn = this.querySelector('.submit-btn');
+      const originalText = submitBtn.innerHTML;
+
+      const formData = {
+        name: document.getElementById('guestName').value,
+        phone: document.getElementById('guestPhone').value,
+        guests: document.getElementById('guestCount').value,
+        message: document.getElementById('guestMessage').value,
+        wedding: 'Айбек и Айгерим - 26.06.2026'
+      };
+
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Жіберілуде';
+      submitBtn.disabled = true;
+
+      try {
+        await fetch(GOOGLE_SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData)
+        });
+
+        document.getElementById('formResponse').innerHTML =
+          'Рақмет! Жауабыңыз сәтті сақталды.';
+        this.reset();
+      } catch (error) {
+        document.getElementById('formResponse').innerHTML =
+          'Жіберу қатесі. WhatsApp арқылы хабарласыңыз.';
+      }
+
+      submitBtn.innerHTML = originalText;
+      submitBtn.disabled = false;
+    });
+  </script>
+</body>
+</html>
